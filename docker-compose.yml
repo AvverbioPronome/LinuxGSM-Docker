@@ -2,9 +2,18 @@ version: '3.3'
 services:
   quake2:
     build: .
+    user: linuxgsm
     environment:
       - GAMESERVER=q2server
+    ports:
+      - 27910:27910/udp
+    restart: unless-stopped
     volumes:
-      - /home/linuxgsm
+      - lgsm:/home/linuxgsm
+      - ./q2server.cfg:/home/linuxgsm/lgsm/config-lgsm/q2server/q2server.cfg
+
+volumes:
+  lgsm:
+### Remember to chown 750 any file you want to mount in there. ###
 
 
