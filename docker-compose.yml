@@ -4,3 +4,7 @@ services:
     build: .
     environment:
       - GAMESERVER=q2server
+    volumes:
+      - /home/linuxgsm
+
+
