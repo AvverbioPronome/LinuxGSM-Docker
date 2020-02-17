@@ -23,7 +23,7 @@ if [ $# = 0 ]; then
             && ./linuxgsm.sh "$GAMESERVER"\
             && "./$GAMESERVER" auto-install 
     
-        if [ $? != 0]; then
+        if [ $? != 0 ]; then
             echo "Something went wrong with the install"
             exit 100
         fi
