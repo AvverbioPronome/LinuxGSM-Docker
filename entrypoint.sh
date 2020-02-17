@@ -16,15 +16,23 @@ fi
 
 # with no command, just run the game (or try)
 if [ $# = 0 ]; then
+
     if [ ! -e "$GAMESERVER" ]; then
         echo "Installing $GAMESERVER"
-        ./linuxgsm.sh "$GAMESERVER"\
-            && "./$GAMESERVER" auto-install
+        sudo chown -R linuxgsm:linuxgsm /home/linuxgsm\
+            && ./linuxgsm.sh "$GAMESERVER"\
+            && "./$GAMESERVER" auto-install 
+    
+        if [ $? != 0]; then
+            echo "Something went wrong with the install"
+            exit 100
+        fi
     fi
-    sudo sed -i '/linuxgsm/d' /etc/sudoers 
+
+    sudo sed -i '/linuxgsm/d' /etc/sudoers
     echo "Launching $GAMESERVER (IN DEBUG MODE)"
     echo Y | "./$GAMESERVER" debug
-else
+else    
     # execute the command passed through docker
     "$@"
 fi
