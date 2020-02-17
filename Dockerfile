@@ -4,7 +4,7 @@
 # https://github.com/GameServerManagers/LinuxGSM-Docker
 #
 
-FROM ubuntu:18.04 AS linuxgsm-base
+FROM debian:buster-slim
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
 
 ENV DEBIAN_FRONTEND noninteractive
