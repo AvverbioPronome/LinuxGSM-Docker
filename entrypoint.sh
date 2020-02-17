@@ -20,7 +20,7 @@ if [ $# = 0 ]; then
         echo "Installing $GAMESERVER"
         ./linuxgsm.sh "$GAMESERVER"\
             && "./$GAMESERVER" auto-install\
-            && sudo sed -i '$d' /etc/sudoers 
+            && sudo sed -i '/linuxgsm/d' /etc/sudoers 
     fi
     echo "Launching $GAMESERVER (IN DEBUG MODE)"
     echo Y | "./$GAMESERVER" debug
