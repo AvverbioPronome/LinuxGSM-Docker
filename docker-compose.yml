@@ -8,7 +8,8 @@ services:
     ports:
       - 27910:27910/udp
     restart: unless-stopped
-    networks: host
+    networks:
+      - host
     volumes:
       - lgsm:/home/linuxgsm
       - ./q2server.cfg.lgsm:/home/linuxgsm/lgsm/config-lgsm/q2server/q2server.cfg
