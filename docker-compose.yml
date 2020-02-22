@@ -18,3 +18,6 @@ volumes:
   lgsm:
 ### Remember to chown 750 any file you want to mount in there. ###
 
+networks:
+  host:
+    driver: host
