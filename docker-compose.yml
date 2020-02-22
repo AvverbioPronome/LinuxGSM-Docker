@@ -11,8 +11,8 @@ services:
     networks: host
     volumes:
       - lgsm:/home/linuxgsm
-      - ./q2server.cfg:/home/linuxgsm/lgsm/config-lgsm/q2server/q2server.cfg
-
+      - ./q2server.cfg.lgsm:/home/linuxgsm/lgsm/config-lgsm/q2server/q2server.cfg
+      - ./q2server.cfg.quake2:/home/linuxgsm/serverfiles/baseq2/q2server.cfg
 volumes:
   lgsm:
 ### Remember to chown 750 any file you want to mount in there. ###
