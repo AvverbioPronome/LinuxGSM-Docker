@@ -20,7 +20,7 @@ ENV LANG en_US.utf8
 ## Base System
 RUN dpkg --add-architecture i386\
  && apt-get update -y\
- && apt-get install -y sudo tmux\
+ && apt-get install -y sudo tmux bash\
                        curl wget file tar bzip2 gzip unzip\
                        bsdmainutils python3 util-linux\
                        ca-certificates binutils bc jq\
